@@ -1,0 +1,29 @@
+{
+    "name": "animatedscrolljs",
+    "title": "AnimatedScroll.js",
+    "description": "Smooth, animated document scroll to a specific element, supporting native jQuery UI easings.",
+    "keywords": [
+        "ui",
+        "animation",
+        "scroll"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Yevhen Tiurin",
+        "email" : "yevhentiurin@gmail.com",
+        "url": "https://github.com/yevhentiurin"
+    },
+    "licenses": [
+    {
+        "type": "LGPLv3",
+        "url": "http://www.gnu.org/licenses/lgpl.txt"
+    }
+    ],
+    "bugs": "https://github.com/yevhentiurin/animatedscrolljs/issues",
+    "homepage": "https://github.com/yevhentiurin/animatedscrolljs",
+    "demo": "http://yevhentiurin.github.io/animatedscrolljs/",
+    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/jquery.animatedscroll-1.0.0.min.js",
+    "dependencies": {
+        "jquery": ">=1.3"
+    }
+}
