@@ -2,6 +2,10 @@ AnimatedScroll.js
 ================
 Smooth, animated document scroll to a specific element, supporting native jQuery UI easings.
 
+Demonstration
+-------------
+Check it in action on [demo page](https://yevhentiurin.github.com/animatedscrolljs).
+
 Usage
 -----
 ```javascript
@@ -14,10 +18,6 @@ $("#footer").animatedScroll(
 ```
 .animatedScroll() method's first parameter dublicates the "options" parameter from jQuery native [.animate()](http://api.jquery.com/animate/#animate-properties-options) method.
 
-Demonstration
--------------
-Check it in action on [demo page](https://yevhentiurin.github.com/animatedscrolljs).
-
 Dependency
 ----------
 Requires [jQuery](http://jquery.com/) 1.3 or newer. 
@@ -25,7 +25,7 @@ Optional [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) to giv
 
 Compatibility
 -------------
-Works with all versions of browsers that support jQuery 1.3 including IE7.
+Works with all versions of browsers that support jQuery 1.3, including IE7.
 
 Download
 --------
