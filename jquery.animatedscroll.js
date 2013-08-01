@@ -1,5 +1,5 @@
 /**
-* AnimatedScroll.js v1.0.1
+* AnimatedScroll.js - Developer version
 * Smooth, animated document scroll to a specific element, supporting native jQuery UI easings.
 * https://github.com/yevhentiurin/animatedscrolljs
 *
@@ -7,7 +7,6 @@
 * Licensed under the LGPL Version 3 license.
 * http://www.gnu.org/licenses/lgpl.txt
 *
-* Date: July 31, 2013
 **/
 
 (function($) 
@@ -69,7 +68,6 @@
       .css(
         {
           visibility: 'hidden',
-          //background: 'red', 
           position: "absolute", 
           width: viewportWidth, 
           height: viewportHeight, 
