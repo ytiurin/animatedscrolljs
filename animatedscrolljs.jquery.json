@@ -7,7 +7,7 @@
         "animation",
         "scroll"
     ],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": {
         "name": "Yevhen Tiurin",
         "email" : "yevhentiurin@gmail.com",
@@ -22,7 +22,7 @@
     "bugs": "https://github.com/yevhentiurin/animatedscrolljs/issues",
     "homepage": "https://github.com/yevhentiurin/animatedscrolljs",
     "demo": "http://yevhentiurin.github.io/animatedscrolljs/",
-    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.0.1.min.js",
+    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.0.2.min.js",
     "dependencies": {
         "jquery": ">=1.3"
     }
