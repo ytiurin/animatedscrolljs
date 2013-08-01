@@ -24,7 +24,7 @@
   {
     var viewportWidth, viewportHeight, targetWidth, targetHeight, 
       documentWidth, documentHeight, targetLeft, targetTop,
-      animateLeft, animateTop, animateParameters;
+      animateLeft, animateTop, animateParameters, dx, dy;
 
     viewportWidth = $(window).width();
     viewportHeight = $(window).height();
@@ -35,9 +35,42 @@
     targetLeft = $(element).offset().left;
     targetTop = $(element).offset().top;
 
-    animateLeft = targetLeft - ((viewportWidth - targetWidth) / 2);
+    dx = (viewportWidth - targetWidth) / 2;
+    dy = (viewportHeight - targetHeight) / 2;
+
+    if (options.position && options.position.x)
+    {
+      if (typeof(options.position.x) == 'string')
+        switch (options.position.x)
+        {
+          case 'left': dx = 0; break;
+          case 'right': dx = -targetWidth; break;
+          case 'center':
+          default:
+        }
+      else
+        dx = parseInt(options.position.x);
+    }
+
+    if (options.position && options.position.y)
+    {
+      if (typeof(options.position.y) == 'string')
+        switch (options.position.y)
+        {
+            case 'top': dy = 0; break;
+            case 'bottom': dy = targetHeight; break;
+            case 'middle':
+            default:
+        }
+      else
+        dy = parseInt(options.position.y);
+    }
+
+    delete options.position;
+
+    animateLeft = targetLeft - dx;
     animateLeft = animateLeft < 0 ? 0 : (animateLeft + viewportWidth > documentWidth ? documentWidth - viewportWidth : animateLeft);
-    animateTop = targetTop - ((viewportHeight - targetHeight) / 2);
+    animateTop = targetTop - dy;
     animateTop = animateTop < 0 ? 0 : (animateTop + viewportHeight > documentHeight ? documentHeight - viewportHeight : animateTop);
 
     animateParameters = $.extend({}, options, 
