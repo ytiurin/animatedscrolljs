@@ -58,7 +58,7 @@
 
           if (typeof options.complete == "function")
           {
-            options.always.apply(this, arguments);
+            options.complete.apply(this, arguments);
           };
         }
       }
