@@ -12,15 +12,15 @@
 (function($) 
 {
   //***************************
-  $.fn.animatedScroll = function(options) 
+  $.fn.animatedScroll = function(options, callback) 
   {
-    AnimatedScroll(this.get(0), options);
+    AnimatedScroll(this.get(0), options, callback);
 
     return this;
   };
 
   //***************************
-  function AnimatedScroll(element, options)
+  function AnimatedScroll(element, options, callback)
   {
     var viewportWidth, viewportHeight, targetWidth, targetHeight, 
       documentWidth, documentHeight, targetLeft, targetTop,
@@ -60,6 +60,8 @@
           {
             options.always.apply(this, arguments);
           };
+          
+          callback && callback();
         }
       }
     );
