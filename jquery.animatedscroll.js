@@ -12,19 +12,33 @@
 (function($) 
 {
   //***************************
-  $.fn.animatedScroll = function(options) 
+  $.animatedScroll = 
   {
-    AnimatedScroll(this.get(0), options);
+    options: {},
+    offsetFromTarget: 
+    {
+      left: "50%",
+      top: "50%"
+    }
+  };
+
+  //***************************
+  $.fn.animatedScroll = function(options, offsetFromTarget) 
+  {
+    options = $.extend({}, $.animatedScroll.options, options);
+    offsetFromTarget = $.extend({}, $.animatedScroll.offsetFromTarget, offsetFromTarget);
+
+    AnimatedScroll(this.get(0), options, offsetFromTarget);
 
     return this;
   };
 
   //***************************
-  function AnimatedScroll(element, options)
+  function AnimatedScroll(element, options, offsetFromTarget)
   {
     var viewportWidth, viewportHeight, targetWidth, targetHeight, 
       documentWidth, documentHeight, targetLeft, targetTop,
-      animateLeft, animateTop, animateParameters, dx, dy;
+      animateLeft, animateTop, animateParameters, offsetLeft, offsetTop;
 
     viewportWidth = $(window).width();
     viewportHeight = $(window).height();
@@ -35,42 +49,30 @@
     targetLeft = $(element).offset().left;
     targetTop = $(element).offset().top;
 
-    dx = (viewportWidth - targetWidth) / 2;
-    dy = (viewportHeight - targetHeight) / 2;
-
-    if (options.position && options.position.x)
+    function parseOffsetValue(targetValue, offsetValue)
     {
-      if (typeof(options.position.x) == 'string')
-        switch (options.position.x)
-        {
-          case 'left': dx = 0; break;
-          case 'right': dx = -targetWidth; break;
-          case 'center':
-          default:
-        }
-      else
-        dx = parseInt(options.position.x);
-    }
+      var parsedOffsetValue = parseInt(offsetValue);
 
-    if (options.position && options.position.y)
-    {
-      if (typeof(options.position.y) == 'string')
-        switch (options.position.y)
-        {
-            case 'top': dy = 0; break;
-            case 'bottom': dy = targetHeight; break;
-            case 'middle':
-            default:
-        }
-      else
-        dy = parseInt(options.position.y);
-    }
+      if (isNaN(parsedOffsetValue))
+        return 0;
 
-    delete options.position;
+      if (offsetValue.indexOf !== undefined)
+      {
+          if (offsetValue.indexOf("%") > -1)
+          {
+            return (targetValue * parsedOffsetValue / 100);
+          }
+      };
 
-    animateLeft = targetLeft - dx;
+      return parsedOffsetValue; 
+    };
+
+    offsetLeft = parseOffsetValue(targetWidth, offsetFromTarget.left);
+    offsetTop = parseOffsetValue(targetHeight, offsetFromTarget.top);
+    
+    animateLeft = targetLeft + offsetLeft - (viewportWidth / 2);
     animateLeft = animateLeft < 0 ? 0 : (animateLeft + viewportWidth > documentWidth ? documentWidth - viewportWidth : animateLeft);
-    animateTop = targetTop - dy;
+    animateTop = targetTop + offsetTop - (viewportHeight / 2);
     animateTop = animateTop < 0 ? 0 : (animateTop + viewportHeight > documentHeight ? documentHeight - viewportHeight : animateTop);
 
     animateParameters = $.extend({}, options, 
