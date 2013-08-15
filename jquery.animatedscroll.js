@@ -14,7 +14,7 @@
   //***************************
   $.animatedScroll = 
   {
-    options: {},
+    animateOptions: {},
     offsetFromTarget: 
     {
       left: "50%",
@@ -23,22 +23,23 @@
   };
 
   //***************************
-  $.fn.animatedScroll = function(options, offsetFromTarget) 
+  $.fn.animatedScroll = function(animateOptions, offsetFromTarget) 
   {
-    options = $.extend({}, $.animatedScroll.options, options);
+    animateOptions = $.extend({}, $.animatedScroll.animateOptions, animateOptions);
     offsetFromTarget = $.extend({}, $.animatedScroll.offsetFromTarget, offsetFromTarget);
 
-    AnimatedScroll(this.get(0), options, offsetFromTarget);
+    AnimatedScroll(this.get(0), animateOptions, offsetFromTarget);
 
     return this;
   };
 
   //***************************
-  function AnimatedScroll(element, options, offsetFromTarget)
+  function AnimatedScroll(element, animateOptions, offsetFromTarget)
   {
     var viewportWidth, viewportHeight, targetWidth, targetHeight, 
       documentWidth, documentHeight, targetLeft, targetTop,
-      animateLeft, animateTop, animateParameters, offsetLeft, offsetTop;
+      animateLeft, animateTop, offsetLeft, offsetTop,
+      animateStep, animateComplete;
 
     viewportWidth = $(window).width();
     viewportHeight = $(window).height();
@@ -75,15 +76,18 @@
     animateTop = targetTop + offsetTop - (viewportHeight / 2);
     animateTop = animateTop < 0 ? 0 : (animateTop + viewportHeight > documentHeight ? documentHeight - viewportHeight : animateTop);
 
-    animateParameters = $.extend({}, options, 
+    animateStep = animateOptions.step;
+    animateComplete = animateOptions.complete;
+
+    animateOptions = $.extend({}, animateOptions, 
       {
         step: function(now, tween)
         {
           tween.elem.scrollIntoView(true);
           
-          if (typeof options.step == "function")
+          if (typeof animateStep == "function")
           {
-            options.step.apply(this, arguments);
+            animateStep.apply(this, arguments);
           };
         },
         complete: function()
@@ -91,9 +95,9 @@
           this.scrollIntoView(true);
           $(this).remove();
 
-          if (typeof options.complete == "function")
+          if (typeof animateComplete == "function")
           {
-            options.complete.apply(this, arguments);
+            animateComplete.apply(this, arguments);
           };
         }
       }
@@ -111,7 +115,7 @@
         }
       )
       .appendTo(document.body)
-      .animate({left: animateLeft, top: animateTop}, animateParameters);
+      .animate({left: animateLeft, top: animateTop}, animateOptions);
   };
 
 })(jQuery);
