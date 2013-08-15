@@ -24,7 +24,7 @@ Documentation
 ```
 
 - ```animateOptions``` parameter dublicates the ```options``` parameter from jQuery native [```.animate()```](http://api.jquery.com/animate/#animate-properties-options) method.
-- ```offsetFromTarget``` is an object with ```left``` and ```top``` properties, representing the offset of viewport center to target element left and top edge in the end of animation. ```left``` and ```top``` properties may be absolute values like ```100``` or ```"100px"```, giving the number of pixels for offset, or it may carry percentage values like ```"50%"```, so that the offset would be calculated, depending on target element size. By **default** ```left``` and ```top``` values are set to ```"50%"```.
+- ```offsetFromTarget``` is an object with ```left``` and ```top``` properties, representing the offset of viewport center to target element left and top edge in the end of animation. ```left``` and ```top``` properties may be absolute values like ```100``` or ```"100px"```, giving the number of pixels for offset, or it may carry percentage values like ```"50%"```, so that the offset would be calculated, depending on target element size. The **default** ```offsetFromTarget``` value is ```{left: "50%", top: "50%"}```.
 
 Dependency
 ----------
