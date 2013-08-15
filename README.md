@@ -24,13 +24,11 @@ Documentation
 ```
 
 - ```animateOptions``` parameter dublicates the ```options``` parameter from jQuery native [```.animate()```](http://api.jquery.com/animate/#animate-properties-options) method.
-- ```offsetFromTarget``` is an object with ```left``` and ```top``` properties, representing the offset of viewport center to target element left and top edge in the end of animation. ```left``` and ```top``` properties may be absolute values like ```100``` or ```"100px"```, giving the number of pixels for offset, or it may carry percentage values like ```"50%"```, so that the offset would be calculated, depending on target element size.
+- ```offsetFromTarget``` is an object with ```left``` and ```top``` properties, representing the offset of viewport center to target element left and top edge in the end of animation. ```left``` and ```top``` properties may be absolute values like ```100``` or ```"100px"```, giving the number of pixels for offset, or it may carry percentage values like ```"50%"```, so that the offset would be calculated, depending on target element size. By **default** ```left``` and ```top``` values are set to ```"50%"```.
 
 Dependency
 ----------
-Requires [jQuery](http://jquery.com/) 1.3 or newer.
-
-Optional [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) to give advanced easing options.
+Requires [jQuery](http://jquery.com/) 1.3 or newer. Optional [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) to give advanced easing options.
 
 Compatibility
 -------------
