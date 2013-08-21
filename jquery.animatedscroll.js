@@ -3,7 +3,7 @@
 * Smooth, animated document scroll to a specific element, supporting native jQuery UI easings.
 * https://github.com/yevhentiurin/animatedscrolljs
 *
-* By Yevhen Tiurin <yevhentiurin@gmail.com>, Mikhail Semakhin <mike.semakhin@gmail.com>
+* By Yevhen Tiurin <yevhentiurin@gmail.com>, Mikhail Semakhin <mike.semakhin@gmail.com>, Carlo Alberto Ferraris <cafxx@cafxx.strayorange.com>
 * Licensed under the LGPL Version 3 license.
 * http://www.gnu.org/licenses/lgpl.txt
 *
