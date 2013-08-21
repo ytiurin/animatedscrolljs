@@ -43,8 +43,8 @@
 
     viewportWidth = window.innerWidth;
     viewportHeight = window.innerHeight;
-    targetWidth = $(element).width();
-    targetHeight = $(element).height();
+    targetWidth = $(element).outerWidth();
+    targetHeight = $(element).outerHeight();
     documentWidth = $(document).width();
     documentHeight = $(document).height();
     targetLeft = $(element).offset().left;
