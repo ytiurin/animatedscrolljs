@@ -7,17 +7,22 @@
         "animation",
         "scroll"
     ],
-    "version": "1.1.1",
+    "version": "1.1.2",
     "author": {
         "name": "Yevhen Tiurin",
         "email" : "yevhentiurin@gmail.com",
         "url": "https://github.com/yevhentiurin"
     },
-    "maintainers": [
+    "maintainers": [ 
         {
             "name": "Mikhail Semakhin",
             "email": "mike.semakhin@gmail.com",
             "url": "https://github.com/ja-maika"
+        },
+        {
+            "name": "Carlo Alberto Ferraris",
+            "email": "cafxx@cafxx.strayorange.com",
+            "url": "http://cafxx.strayorange.com"
         }
     ],
     "licenses": [
@@ -29,7 +34,7 @@
     "bugs": "https://github.com/yevhentiurin/animatedscrolljs/issues",
     "homepage": "https://github.com/yevhentiurin/animatedscrolljs",
     "demo": "http://yevhentiurin.github.io/animatedscrolljs/",
-    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.1.min.js",
+    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.2.min.js",
     "dependencies": {
         "jquery": ">=1.3"
     }
