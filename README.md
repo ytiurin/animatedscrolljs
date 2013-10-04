@@ -36,4 +36,4 @@ Works with all versions of browsers that support jQuery 1.3, including IE7.
 
 Download
 --------
-Get latest [development version](https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.3.js) ~3.5KB or [minified version](https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.3.min.js) only ~2KB
+Get latest [development version](https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.4.js) ~3.5KB or [minified version](https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.4.min.js) only ~2KB
