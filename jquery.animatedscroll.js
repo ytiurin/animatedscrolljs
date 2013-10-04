@@ -41,8 +41,8 @@
       animateLeft, animateTop, offsetLeft, offsetTop,
       animateStep, animateComplete;
 
-    viewportWidth = $(window).width();
-    viewportHeight = $(window).height();
+    viewportWidth = window.innerWidth - 20;
+    viewportHeight = window.innerHeight - 20;
     targetWidth = $(element).outerWidth();
     targetHeight = $(element).outerHeight();
     documentWidth = $(document).width();
