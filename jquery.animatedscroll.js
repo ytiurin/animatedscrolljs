@@ -36,19 +36,12 @@
   //***************************
   function AnimatedScroll(element, animateOptions, offsetFromTarget)
   {
-    var viewportWidth, viewportHeight, targetWidth, targetHeight, 
-      documentWidth, documentHeight, targetLeft, targetTop,
-      animateLeft, animateTop, offsetLeft, offsetTop,
-      animateStep, animateComplete;
-
-    viewportWidth = window.innerWidth - 20;
-    viewportHeight = window.innerHeight - 20;
-    targetWidth = $(element).outerWidth();
-    targetHeight = $(element).outerHeight();
-    documentWidth = $(document).width();
-    documentHeight = $(document).height();
-    targetLeft = $(element).offset().left;
-    targetTop = $(element).offset().top;
+    var $window, $body, $element, 
+      viewportWidth, viewportHeight, viewportLeft, viewportTop,
+      targetWidth, targetHeight, targetLeft, targetTop,
+      bodyWidth, bodyHeight, 
+      offsetLeft, offsetTop,
+      animateLeft, animateTop, animateStep, animateComplete;
 
     function parseOffsetValue(targetValue, offsetValue)
     {
@@ -68,13 +61,29 @@
       return parsedOffsetValue; 
     };
 
+    $window = $(window);
+    $body = $(document.body);
+    $element = $(element);
+
+    viewportWidth = window.innerWidth - 20;
+    viewportHeight = window.innerHeight - 20;
+    viewportLeft = $window.scrollLeft();
+    viewportTop = $window.scrollTop();
+
+    targetWidth = $element.outerWidth();
+    targetHeight = $element.outerHeight();
+    targetLeft = $element.offset().left;
+    targetTop = $element.offset().top;
+
+    bodyWidth = $body.outerWidth();
+    bodyHeight = $body.outerHeight();
     offsetLeft = parseOffsetValue(targetWidth, offsetFromTarget.left);
     offsetTop = parseOffsetValue(targetHeight, offsetFromTarget.top);
     
     animateLeft = targetLeft + offsetLeft - (viewportWidth / 2);
-    animateLeft = animateLeft < 0 ? 0 : (animateLeft + viewportWidth > documentWidth ? documentWidth - viewportWidth : animateLeft);
+    animateLeft = animateLeft < 0 ? 0 : (animateLeft + viewportWidth > bodyWidth ? bodyWidth - viewportWidth : animateLeft);
     animateTop = targetTop + offsetTop - (viewportHeight / 2);
-    animateTop = animateTop < 0 ? 0 : (animateTop + viewportHeight > documentHeight ? documentHeight - viewportHeight : animateTop);
+    animateTop = animateTop < 0 ? 0 : (animateTop + viewportHeight > bodyHeight ? bodyHeight - viewportHeight : animateTop);
 
     animateStep = animateOptions.step;
     animateComplete = animateOptions.complete;
@@ -110,8 +119,8 @@
           position: "absolute", 
           width: viewportWidth, 
           height: viewportHeight, 
-          left: $(window).scrollLeft(),
-          top: $(window).scrollTop()
+          left: viewportLeft,
+          top: viewportTop
         }
       )
       .appendTo(document.body)
