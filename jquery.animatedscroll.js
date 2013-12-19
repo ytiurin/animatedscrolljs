@@ -102,7 +102,7 @@
 
           if (typeof animateComplete == "function")
           {
-            animateComplete.apply(this, arguments);
+            animateComplete.apply(element, arguments);
           };
         }
       }

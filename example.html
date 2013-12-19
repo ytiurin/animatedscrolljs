@@ -17,11 +17,16 @@
   width: 200px;
   background: #fff;
 }
+p
+{
+  outline-color: transparent;
+}
 .highlighted
 {
   outline: 10px solid #00AAFF;
   background: #00AAFF;
   color: #FFF;
+  transition: color 0.5s, background-color 0.5s, outline-color 0.5s;
 }
 
 </style>
@@ -76,11 +81,14 @@ $(function()
     $p
       .removeClass("highlighted")
       .eq(randomParagraphInd)
-        .addClass("highlighted")
         .animatedScroll(
           {
             duration: $("#select-duration").val(), 
-            easing: $("#select-easing").val()
+            easing: $("#select-easing").val(),
+            complete: function()
+            {
+              $(this).addClass("highlighted");
+            }
           }
         );
   };
