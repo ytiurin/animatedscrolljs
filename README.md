@@ -4,7 +4,7 @@ Smooth, animated document scroll to a specific element, supporting native jQuery
 
 Demonstration
 -------------
-Check it in action on [demo page](https://yevhentiurin.github.com/animatedscrolljs).
+Check it in action on [demo page](https://ytiurin.github.io/animatedscrolljs).
 
 Usage
 -----
