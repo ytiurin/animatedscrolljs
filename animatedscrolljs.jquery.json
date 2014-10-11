@@ -31,10 +31,10 @@
         "url": "http://www.gnu.org/licenses/lgpl.txt"
     }
     ],
-    "bugs": "https://github.com/yevhentiurin/animatedscrolljs/issues",
-    "homepage": "https://github.com/yevhentiurin/animatedscrolljs",
-    "demo": "http://yevhentiurin.github.io/animatedscrolljs/",
-    "download": "https://raw.github.com/yevhentiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.5.min.js",
+    "bugs": "https://github.com/ytiurin/animatedscrolljs/issues",
+    "homepage": "https://github.com/ytiurin/animatedscrolljs",
+    "demo": "http://ytiurin.github.io/animatedscrolljs/",
+    "download": "https://raw.github.com/ytiurin/animatedscrolljs/master/releases/jquery.animatedscroll-1.1.5.min.js",
     "dependencies": {
         "jquery": ">=1.3"
     }
